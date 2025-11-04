@@ -5,128 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的個人首頁</title>
   <style>
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      background-color: #f5f5f5;
+    * {
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", "Microsoft JhengHei", sans-serif;
+      background: url("myphoto.jpg") center/cover no-repeat;
+      color: white;
       height: 100vh;
-    }
-
-    .container {
       display: flex;
       align-items: center;
-      background: white;
-      border-radius: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      padding: 40px 60px;
-      max-width: 900px;
-    }
-
-    .photo {
-      flex: 1;
-      display: flex;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
-
-    .photo img {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .info {
-      flex: 1.2;
-      padding-left: 50px;
-    }
-
-    .info h1 {
-      font-size: 64px;
-      margin: 0;
-      color: #111;
-    }
-
-    .info h2 {
-      font-size: 20px;
-      font-weight: 700;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    .info p {
-      font-size: 15px;
-      line-height: 1.6;
-      color: #444;
-      margin-top: 8px;
-    }
-
-    .buttons {
+    /* 左側社群欄 */
+    .social-bar {
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
-      gap: 20px;
-      margin-top: 25px;
+      flex-direction: column;
+      gap: 15px;
     }
-
-    .buttons a {
+    .social-bar a {
+      background: #6a00ff;
+      color: white;
       text-decoration: none;
-      color: #111;
-      font-weight: 700;
-      border-radius: 50%;
-      width: 100px;
-      height: 100px;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      font-size: 20px;
       transition: 0.3s;
-      font-size: 16px;
     }
-
-    .resume { background-color: #f4b400; }
-    .projects { background-color: #ea4335; color: white; }
-    .contact { background-color: #46b8b1; color: white; }
-
-    .buttons a:hover {
+    .social-bar a:hover {
+      background: #9b4dff;
       transform: scale(1.1);
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        padding: 30px;
-        text-align: center;
-      }
-      .info {
-        padding-left: 0;
-      }
-      .buttons {
-        justify-content: center;
-      }
+    /* 中央文字 */
+    .content {
+      text-align: center;
+      backdrop-filter: brightness(0.9);
+      padding: 20px;
+    }
+    h1 {
+      font-size: 5em;
+      letter-spacing: 3px;
+      font-weight: 800;
+    }
+    p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      letter-spacing: 1px;
+    }
+
+    /* 聊天按鈕 */
+    .chat-btn {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      background: #6a00ff;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 25px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
+    .chat-btn:hover {
+      background: #9b4dff;
+      transform: scale(1.05);
+    }
+
+    /* 作品集區 */
+    .works {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+    .works a {
+      color: #fff;
+      text-decoration: none;
+      margin: 5px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 8px 16px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .works a:hover {
+      background: rgba(255, 255, 255, 0.2);
     }
   </style>
+
+  <!-- 字體與 icon -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7a1b8b3c60.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container">
-    <div class="photo">
-      <!-- 請替換為你的照片 -->
-      <img src="myphoto.jpg" alt="我的照片">
-    </div>
+  <!-- 左側社群圖示列 -->
+  <div class="social-bar">
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+  </div>
 
-    <div class="info">
-      <h1>Hello</h1>
-      <h2>關於我</h2>
-      <p>嗨！我是小寶，一名熱愛創作與科技的教育工作者。<br>
-         我喜歡把生活與程式設計結合，讓學生在玩樂中學習演算法的魅力。</p>
+  <!-- 中央姓名與標語 -->
+  <div class="content">
+    <h1>ASHLEY</h1>
+    <p>Vlogging About Beauty, Fashion, Life Hacks & My Life!</p>
+  </div>
 
-      <div class="buttons">
-        <a href="resume.pdf" class="resume" target="_blank">Resume</a>
-        <a href="project1.pdf" class="projects" target="_blank">Projects</a>
-        <a href="project2.pdf" class="contact" target="_blank">Contact</a>
-      </div>
-    </div>
+  <!-- 聊天按鈕 -->
+  <button class="chat-btn">
+    <i class="fas fa-user"></i> Let's Chat!
+  </button>
+
+  <!-- PDF 作品集 -->
+  <div class="works">
+    <a href="work1.pdf" target="_blank">📄 作品一：創意設計報告</a>
+    <a href="work2.pdf" target="_blank">📄 作品二：專題成果展示</a>
+    <a href="work3.pdf" target="_blank">📄 作品三：研究簡報摘要</a>
   </div>
 </body>
 </html>
