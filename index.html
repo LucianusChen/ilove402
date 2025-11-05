@@ -1,149 +1,130 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的個人首頁</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Personal Page</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: "Poppins", "Microsoft JhengHei", sans-serif;
-      background: url("myphoto.jpg") center/cover no-repeat;
-      color: white;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* 左側社群欄 */
-    .social-bar {
-      position: absolute;
-      left: 30px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    .social-bar a {
-      background: #6a00ff;
-      color: white;
-      text-decoration: none;
-      width: 40px;
-      height: 40px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      transition: 0.3s;
-    }
-    .social-bar a:hover {
-      background: #9b4dff;
-      transform: scale(1.1);
-    }
-
-    /* 中央文字 */
-    .content {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #aee0e6;
+      color: #333;
       text-align: center;
-      backdrop-filter: brightness(0.9);
-      padding: 20px;
-    }
-    h1 {
-      font-size: 5em;
-      letter-spacing: 3px;
-      font-weight: 800;
-    }
-    p {
-      font-size: 1.2em;
-      margin-top: 10px;
-      letter-spacing: 1px;
     }
 
-    /* 聊天按鈕 */
-    .chat-btn {
-      position: absolute;
-      bottom: 40px;
-      right: 40px;
-      background: #6a00ff;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      padding: 15px 25px;
-      font-size: 1em;
-      font-weight: 600;
-      cursor: pointer;
+    header {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.3s;
-    }
-    .chat-btn:hover {
-      background: #9b4dff;
-      transform: scale(1.05);
+      justify-content: flex-end;
+      padding: 20px 40px;
+      font-size: 16px;
     }
 
-    /* 作品集區 */
-    .works {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
+    header a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    header a:hover {
+      color: #007bff;
+    }
+
+    .hero {
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: white;
+      justify-content: center;
+      min-height: 90vh;
+      background-color: #aee0e6;
     }
-    .works a {
+
+    .hero img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 80px;
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: 2px;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    p.subtitle {
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.6);
+      padding-top: 10px;
+      width: 60%;
+      max-width: 400px;
+    }
+
+    section {
+      background: #fff;
+      padding: 60px 20px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .pdf-links a {
+      display: inline-block;
+      margin: 10px 15px;
+      padding: 12px 24px;
+      border-radius: 25px;
+      background: #007bff;
       color: #fff;
       text-decoration: none;
-      margin: 5px;
-      background: rgba(0, 0, 0, 0.4);
-      padding: 8px 16px;
-      border-radius: 8px;
       transition: 0.3s;
     }
-    .works a:hover {
-      background: rgba(255, 255, 255, 0.2);
+
+    .pdf-links a:hover {
+      background: #0056b3;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      background: #f2f2f2;
     }
   </style>
-
-  <!-- 字體與 icon -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/7a1b8b3c60.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- 左側社群圖示列 -->
-  <div class="social-bar">
-    <a href="#"><i class="fab fa-youtube"></i></a>
-    <a href="#"><i class="fab fa-snapchat-ghost"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-  </div>
 
-  <!-- 中央姓名與標語 -->
-  <div class="content">
+  <header>
+    <a href="#">Home</a>
+    <a href="#">My Works</a>
+  </header>
+
+  <div class="hero">
+    <img src="myphoto.jpg" alt="My Photo" />
     <h1>ASHLEY</h1>
-    <p>Vlogging About Beauty, Fashion, Life Hacks & My Life!</p>
+    <p class="subtitle">Vlogging About Beauty, Fashion, Life Hacks & My Life!</p>
   </div>
 
-  <!-- 聊天按鈕 -->
-  <button class="chat-btn">
-    <i class="fas fa-user"></i> Let's Chat!
-  </button>
+  <section>
+    <h2>我的作品</h2>
+    <div class="pdf-links">
+      <a href="work1.pdf" target="_blank">作品一</a>
+      <a href="work2.pdf" target="_blank">作品二</a>
+      <a href="work3.pdf" target="_blank">作品三</a>
+    </div>
+  </section>
 
-  <!-- PDF 作品集 -->
-  <div class="works">
-    <a href="work1.pdf" target="_blank">📄 作品一：創意設計報告</a>
-    <a href="work2.pdf" target="_blank">📄 作品二：專題成果展示</a>
-    <a href="work3.pdf" target="_blank">📄 作品三：研究簡報摘要</a>
-  </div>
+  <footer>
+    © 2025 My Personal Website
+  </footer>
+
 </body>
 </html>
